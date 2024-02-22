@@ -32,8 +32,8 @@ public class MnistTrain {
 
     public void train() throws Exception {
         // 设置训练数据和测试数据迭代器
-        DataSetIterator trainIter = new MnistDataSetIterator(64, true, 12345);
-        DataSetIterator testIter = new MnistDataSetIterator(64, false, 12345);
+        DataSetIterator trainIter = new MnistDataSetIterator(32, true, 12345);
+        DataSetIterator testIter = new MnistDataSetIterator(32, false, 12345);
         // 构建神经网络的配置
         MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
                 .seed(12345)
@@ -74,7 +74,7 @@ public class MnistTrain {
         model.setListeners(new ScoreIterationListener(10));
 
         // 训练模型
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println(StrUtil.format("开始训练第{}轮，开始时间：{}", i + 1, new Date()));
             model.fit(trainIter);
             System.out.println(StrUtil.format("结果第{}轮训练，结束时间：{}", i + 1, new Date()));

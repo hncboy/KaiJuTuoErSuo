@@ -38,11 +38,11 @@ public class Main {
         screenCapStopWatch.start();
         ScreenCapExecutor screenCapExecutor = new ScreenCapExecutor(adbExecutor);
         // 执行截屏
-        ScreenCapInfo screenCapInfo = screenCapExecutor.execute();
-//        ScreenCapInfo screenCapInfo = new ScreenCapInfo();
-//        screenCapInfo.setScreenCapComputerName("Screenshot_20240215_203642.png");
-//        screenCapInfo.setScreenCapComputerDir("E:\\Project\\IdeaProject\\KaiJuTuoErSuo\\KaiJuTuoErSuo\\src\\main\\resources\\screenshop");
-//        screenCapInfo.setScreenCapComputerPath("E:\\Project\\IdeaProject\\KaiJuTuoErSuo\\KaiJuTuoErSuo\\src\\main\\resources\\screenshop\\Screenshot_20240215_203642.png");
+//        ScreenCapInfo screenCapInfo = screenCapExecutor.execute();
+        ScreenCapInfo screenCapInfo = new ScreenCapInfo();
+        screenCapInfo.setScreenCapComputerName("Screenshot_20240215_203642.png");
+        screenCapInfo.setScreenCapComputerDir("E:\\Project\\IdeaProject\\KaiJuTuoErSuo\\KaiJuTuoErSuo\\src\\main\\resources\\screenshop");
+        screenCapInfo.setScreenCapComputerPath("E:\\Project\\IdeaProject\\KaiJuTuoErSuo\\KaiJuTuoErSuo\\src\\main\\resources\\screenshop\\Screenshot_20240215_203642.png");
         screenCapStopWatch.stop();
         System.out.println("截屏耗时：" + screenCapStopWatch.getTotalTimeMillis() + "ms");
 
@@ -74,7 +74,7 @@ public class Main {
         coreStopWatch.stop();
         System.out.println("核心查找消除点位算法耗时：" + coreStopWatch.getTotalTimeSeconds() + "s");
         int totalCleanCount = rectangleInfoSteps.stream().mapToInt(List::size).sum();
-        if (totalCleanCount < 100) {
+        if (totalCleanCount < 80) {
             System.out.println(StrUtil.format("预计消除方块数量为：{}个，不进行消除", totalCleanCount));
             return;
         }
@@ -86,5 +86,9 @@ public class Main {
         swipeExecutor.doSwipe();
         swipeStopWatch.stop();
         System.out.println("滑动耗时：" + swipeStopWatch.getTotalTimeSeconds() + "s");
+
+
+        mainStopWatch.stop();
+        System.out.println("总耗时：" + mainStopWatch.getTotalTimeSeconds() + "s");
     }
 }

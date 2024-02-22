@@ -79,7 +79,7 @@ public class MnistPredictExecutor {
             throw new RuntimeException(e);
         }
 
-        // 这里预留修改手动数字
+        // 这里预留修改手动数字，预测的数字会有 5 个以内的误差，可以改也可以不改
         System.out.println(Arrays.deepToString(predictNumbers));
 
         // 将预测结果填充到方块对象中

@@ -128,15 +128,4 @@ public class OpenCvExecutor {
         }
         return locations;
     }
-
-
-    private static int search_order(List<String> all_data, List<String> all_location, List<String> acts, int h, int w) {
-        // 实现搜索顺序方法，返回当前得分和操作次数
-        return 0;
-    }
-
-    private static int search(List<String> all_data, List<String> all_location, List<String> acts, int h, int w) {
-        // 实现搜索方法，返回当前得分和操作次数
-        return 0;
-    }
 }

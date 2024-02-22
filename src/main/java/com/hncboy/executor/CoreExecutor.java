@@ -83,8 +83,8 @@ public class CoreExecutor {
         // 执行次数
         int executeCount = 100000;
         for (int count = 0; count < executeCount; count++) {
-            if (System.currentTimeMillis() - currentTimeMillis > 50000) {
-                System.out.println("超过 50 秒直接结束，累计搜索次数：" + count);
+            if (System.currentTimeMillis() - currentTimeMillis > 30000) {
+                System.out.println("超过 30 秒直接结束，累计搜索次数：" + count);
                 break;
             }
 
